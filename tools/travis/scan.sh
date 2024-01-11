@@ -30,7 +30,7 @@ cd $ROOTDIR
 
 # clone the openwhisk utilities repo.
 cd $HOMEDIR
-git clone https://github.com/apache/openwhisk-utilities.git
+git clone https://gitee.com/z827565829/openwhisk-utilities.git
 
 # run the scancode util. against project source code starting at its root
 cd $UTILDIR
