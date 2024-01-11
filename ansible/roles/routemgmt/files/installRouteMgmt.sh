@@ -63,6 +63,8 @@ fi
 export WSK_CONFIG_FILE= # override local property file to avoid namespace clashes
 
 echo Installing apimgmt package
+npm config set registry https://registry.npm.taobao.org
+echo npm config get registry
 $WSK_CLI -i --apihost "$APIHOST" package update --auth "$AUTH"  --shared no "$NAMESPACE/apimgmt" \
 -a description "This package manages the gateway API configuration." \
 -p gwUser "$GW_USER" \
@@ -72,18 +74,19 @@ $WSK_CLI -i --apihost "$APIHOST" package update --auth "$AUTH"  --shared no "$NA
 echo Creating NPM module .zip files
 cd "$OPENWHISK_HOME/core/routemgmt/getApi"
 cp "$OPENWHISK_HOME/core/routemgmt/common"/*.js .
+echo first come in
 npm install --registry=https://registry.npm.taobao.org
 zip -r getApi.zip *
 
 cd "$OPENWHISK_HOME/core/routemgmt/createApi"
 cp "$OPENWHISK_HOME/core/routemgmt/common"/*.js .
+echo second come in
 npm install --registry=https://registry.npm.taobao.org
 zip -r createApi.zip *
 
 cd "$OPENWHISK_HOME/core/routemgmt/deleteApi"
 cp "$OPENWHISK_HOME/core/routemgmt/common"/*.js .
 npm install --registry=https://registry.npm.taobao.org
-npm config set registry https://registry.npm.taobao.org
 zip -r deleteApi.zip *
 
 echo Installing apimgmt actions
