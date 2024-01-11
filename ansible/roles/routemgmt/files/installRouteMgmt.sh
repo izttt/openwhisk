@@ -61,7 +61,7 @@ if [ ! -f $WSK_CLI ]; then
 fi
 
 export WSK_CONFIG_FILE= # override local property file to avoid namespace clashes
-
+echo lalallalala
 echo Installing apimgmt package
 npm config set registry https://registry.npm.taobao.org
 echo npm config get registry
