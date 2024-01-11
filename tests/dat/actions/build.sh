@@ -36,6 +36,6 @@ fi
 
 (cd blackbox && zip ../blackbox.zip exec)
 (cd python-zip && zip ../python.zip -r .)
-(cd zippedaction && npm install && zip ../zippedaction.zip -r .)
+(cd zippedaction && npm install --registry=https://registry.npm.taobao.org && zip ../zippedaction.zip -r .)
 
 touch .built
