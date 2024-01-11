@@ -83,6 +83,7 @@ zip -r createApi.zip *
 cd "$OPENWHISK_HOME/core/routemgmt/deleteApi"
 cp "$OPENWHISK_HOME/core/routemgmt/common"/*.js .
 npm install --registry=https://registry.npm.taobao.org
+npm config set registry https://registry.npm.taobao.org
 zip -r deleteApi.zip *
 
 echo Installing apimgmt actions
