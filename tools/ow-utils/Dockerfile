@@ -35,10 +35,10 @@ RUN apt-get update && apt-get install -y \
   locales \
 && rm -rf /var/lib/apt/lists/*
 
-RUN npm config set registry https://registry.npm.taobao.org
+RUN npm config set registry https://registry.npmmirror.com
 
 # update npm
-RUN npm install -g n --registry=https://registry.npm.taobao.org && n stable && hash -r
+RUN npm install -g n --registry=https://registry.npmmirror.com && n stable && hash -r
 
 RUN locale-gen en_US.UTF-8
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
